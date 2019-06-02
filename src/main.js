@@ -3,6 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+import moment from 'moment'
+
+Vue.use(Vuetify)
+
+Vue.prototype.moment = moment
+
+Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
