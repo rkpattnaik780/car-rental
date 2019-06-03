@@ -1,22 +1,29 @@
 <template>
-  <v-container fluid>
-    <v-form>
-    <v-layout column>
-      <v-flex xs12>
-        <div>
+  <v-container fluid fill-height>
+    <v-layout align-center justify-center>
+    <v-flex xs12 sm5>
+      <v-card>
+        <v-card-title>
+          <v-layout my-2 align-center justify-center row>
+            <v-flex xs12>
+          <div class="headline">Book cars at touch of your palm</div>
+            </v-flex>
+          </v-layout>
+          <v-form>
+    <v-layout row wrap mx-3>
+      <v-flex xs12 grow>
           <v-layout  align-center justify-center row>
-            <v-flex xs12 sm6 d-flex>
+            <v-flex xs12>
             <v-select
+              fluid
               :items="locations"
               v-model="selectedLocation"
               label="Location"
             ></v-select>
           </v-flex>
-          
           </v-layout>
-        </div>
       </v-flex>
-      <v-flex xs11 sm5>
+      <v-flex xs12>
         <v-menu
           lazy
           :close-on-content-click="true"
@@ -39,15 +46,22 @@
           </v-date-picker>
         </v-menu>
       </v-flex>
-      <v-btn color="success"  @click="submit">Submit</v-btn>
+      <v-flex xs12 align-center justify-center>
+        <v-btn block rounded color="success"  @click="submit">Submit</v-btn>
+      </v-flex>
     </v-layout>
     </v-form>
+        </v-card-title>
+      </v-card>
+    </v-flex>
+  </v-layout>
+    
   </v-container>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'LandingPage',
   methods:{
     submit(){
       console.log(this.selectedLocation)
